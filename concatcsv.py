@@ -10,11 +10,11 @@ def append(input_file:str, output_file:str, first_line:bool):
             f.readline().rstrip()
         with open(output_file, "a") as of:
             while True:
-                line = f.readline().rstrip()
+                line = f.readline()
                 if not line:
                     break
 
-                of.write(line+'\n')
+                of.write(line)
                 cnt += 1
                 if cnt % 1000 == 0:
                     print('processed %d lines...' % cnt)
